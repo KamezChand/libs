@@ -319,7 +319,7 @@ def save_tiled_images(data, pred_crops, epoch, base_title, directory="sampling",
 
 # 有効な画像数をカウント
 def count_valid_images():
-    with open("oppai_dataset/oppai_meta.json", "r") as fp:
+    with open("pixelization/pixelization_meta.json", "r") as fp:
        metadata = json.load(fp)
 
     valid = []
