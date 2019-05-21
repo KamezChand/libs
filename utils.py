@@ -98,7 +98,7 @@ def expand_bounding(img_size_dict, bbox_dict, expand_factor=1.5, min_size = 256)
 
 # テスト用：Bouding Boxの拡大のチェック
 def view_expanded_bbox():
-    with open("oppai_dataset/oppai_meta.json", "r") as fp:
+    with open("pixelization/pixelization_meta.json", "r") as fp:
        metadata = json.load(fp)
     for pic in metadata:
         with Image.open(pic["filepath"]) as img:
@@ -230,7 +230,7 @@ def add_mosaic(cropped_img_array, rel_bbox, blur_size=10):
 
 # 有効な画像数をカウント
 def mosaic_test():
-    with open("oppai_dataset/oppai_meta.json", "r") as fp:
+    with open("pixelization/pixelization_meta.json", "r") as fp:
        metadata = json.load(fp)
     for pic in tqdm(metadata):
         imgs, rels, abss = crop_by_expanded_bbox(pic)
